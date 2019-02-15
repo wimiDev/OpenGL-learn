@@ -184,6 +184,15 @@ int main()
 		glBindVertexArray(VAO);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
+		// create transformations
+		glm::mat4 transform1 = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
+		transform1 = glm::translate(transform1, glm::vec3(0.5f, 0.5f, 0.0f)); // Switched the order    
+		float scale = sin((float)glfwGetTime());
+		transform1 = glm::scale(transform1, glm::vec3(scale, scale, scale));
+		//transform1 = glm::rotate(transform1, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f)); // Switched the order
+		ourShader.use();
+		unsigned int transformLoc1 = glGetUniformLocation(ourShader.ID, "transform");
+		glUniformMatrix4fv(transformLoc1, 1, GL_FALSE, glm::value_ptr(transform1));
 		glBindVertexArray(VAO);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
