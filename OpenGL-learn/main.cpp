@@ -183,13 +183,22 @@ int main()
 		//模型矩阵，也就是世界空间
 		glm::mat4 model = glm::mat4(1.0f);
 		ourShader.use();
+		//物体颜色
 		ourShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
 		ourShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
 		ourShader.setVec3("lightPos", lightPos);
+
+		//基础物质
 		ourShader.setVec3("viewPos", camera.Position);
 		ourShader.setMat4("model", model);
 		ourShader.setMat4("view", view);
 		ourShader.setMat4("projection", projection);
+
+		//材质
+		ourShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
+		ourShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
+		ourShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
+		ourShader.setFloat("material.shininess", 32.0f);
 
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
