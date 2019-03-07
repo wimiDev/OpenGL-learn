@@ -62,8 +62,8 @@ int main()
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // uncomment this statement to fix compilation on OS X
 #endif
 
-														 // glfw window creation
-														 // --------------------
+	// glfw window creation
+	// --------------------
 	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
 	if (window == NULL)
 	{
@@ -183,10 +183,6 @@ int main()
 		//模型矩阵，也就是世界空间
 		glm::mat4 model = glm::mat4(1.0f);
 		ourShader.use();
-		//物体颜色
-		ourShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
-		ourShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
-		ourShader.setVec3("lightPos", lightPos);
 
 		//基础物质
 		ourShader.setVec3("viewPos", camera.Position);
@@ -195,10 +191,29 @@ int main()
 		ourShader.setMat4("projection", projection);
 
 		//材质
-		ourShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
-		ourShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
+
+		glm::vec3 lightColor;
+		lightColor.x = sin(glfwGetTime() * 2.0f);
+		lightColor.y = sin(glfwGetTime() * 0.7f);
+		lightColor.z = sin(glfwGetTime() * 1.3f);
+
+		glm::vec3 ambientColor(1.0f, 0.5f, 0.31f);
+		glm::vec3 diffuseColor(1.0f, 0.5f, 0.31f);
+
+
+		ourShader.setVec3("material.ambient", ambientColor);
+		ourShader.setVec3("material.diffuse", diffuseColor);
 		ourShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
 		ourShader.setFloat("material.shininess", 32.0f);
+
+		//光照属性
+		diffuseColor = lightColor * glm::vec3(0.5f);
+		ambientColor = diffuseColor * glm::vec3(0.3f);
+
+		ourShader.setVec3("light.position", lightPos);
+		ourShader.setVec3("light.ambient", ambientColor);
+		ourShader.setVec3("light.diffuse", diffuseColor); // 将光照调暗了一些以搭配场景
+		ourShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
 
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
