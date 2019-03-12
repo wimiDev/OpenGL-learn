@@ -16,12 +16,15 @@ struct Material {
 }; 
 
 struct Light{
-	vec3 position;
-
+	vec3 position; 
+	//vec3 direction;//不需要定点光源了
 	vec3 ambient;
 	vec3 diffuse;
 	vec3 specular;
 
+	float constant;
+	float linear;
+	float quadratic;
 };
 
 uniform Material material;
@@ -48,6 +51,13 @@ void main()
 
 	// emission
     vec3 emission = (texture(material.emission, TexCoords).rgb + texture(material.specular, TexCoords).rgb);
+
+	float distance = length(light.position - FragPos);
+	float attenuation = 1.0 / (light.constant + light.linear * distance + light.quadratic * (distance * distance));
+
+	ambient  *= attenuation; 
+	diffuse  *= attenuation;
+	specular *= attenuation;
 
 	vec3 result = ambient + diffuse + specular + emission;
 	FragColor = vec4(result, 1.0);
