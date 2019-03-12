@@ -157,7 +157,10 @@ int main()
 	//加载纹理
 	unsigned int texture1;
 	texture1 = loadTexture("image/container2.png");
-
+	unsigned int texture2;
+	texture2 = loadTexture("image/container2_specular.png");
+	unsigned int texture3;
+	texture3 = loadTexture("image/matrix.jpg");
 
 	unsigned int lightVAO;
 	glGenVertexArrays(1, &lightVAO);
@@ -203,17 +206,25 @@ int main()
 
 		//材质
 		ourShader.setInt("material.diffuse", 0);
-		ourShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
+		ourShader.setInt("material.specular", 1);
+		ourShader.setInt("material.emission", 2);
 		ourShader.setFloat("material.shininess", 64.0f);
 
 		//光照属性
 		ourShader.setVec3("light.position", lightPos);
-		ourShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
+		ourShader.setVec3("light.ambient", 0.1f, 0.1f, 0.1f);
 		ourShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f); // 将光照调暗了一些以搭配场景
 		ourShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
 
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, texture1);
+
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, texture2);
+
+		glActiveTexture(GL_TEXTURE2);
+		glBindTexture(GL_TEXTURE_2D, texture3);
+
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
@@ -279,29 +290,13 @@ void mouse_callback(GLFWwindow *window, double xPos, double yPos) {
 		firstMouse = false;
 	}
 
-	float offsetX = xPos - lastX;
-	float offsetY = lastY - yPos;
+	float xoffset = xPos - lastX;
+	float yoffset = lastY - yPos; // reversed since y-coordinates go from bottom to top
+
 	lastX = xPos;
 	lastY = yPos;
 
-	offsetX *= SENSITIVITY;
-	offsetY *= SENSITIVITY;
-
-	/*yaw += offsetX;
-	pitch += offsetY;
-
-	if (pitch > 89.0f)
-		pitch = 89.0f;
-	if (pitch < -89.0f)
-		pitch = -89.0f;
-
-	glm::vec3 front;
-	front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-	front.y = sin(glm::radians(pitch));
-	front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-	cameraFront = glm::normalize(front);*/
-
-	camera.ProcessMouseMovement(offsetX, offsetY);
+	camera.ProcessMouseMovement(xoffset, yoffset);
 }
 
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
