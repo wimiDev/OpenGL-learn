@@ -221,11 +221,15 @@ int main()
 		ourShader.setInt("material.diffuse", 0);
 		ourShader.setInt("material.specular", 1);
 		ourShader.setInt("material.emission", 2);
-		ourShader.setFloat("material.shininess", 64.0f);
+		ourShader.setFloat("material.shininess", 32.0f);
 
 		//光照属性
-		ourShader.setVec3("light.direction", -0.2f, -1.0f, -0.3f);
-		ourShader.setVec3("light.ambient", 0.1f, 0.1f, 0.1f);
+		ourShader.setVec3("light.direction", camera.Front);
+		ourShader.setVec3("light.position", camera.Position);
+		ourShader.setFloat("light.cutOff", glm::cos(glm::radians(12.5f)));
+		ourShader.setFloat("light.outerCutOff", glm::cos(glm::radians(17.5f)));
+
+		ourShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
 		ourShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f); // 将光照调暗了一些以搭配场景
 		ourShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
 
