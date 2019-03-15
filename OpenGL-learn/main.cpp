@@ -240,8 +240,8 @@ int main()
 		//ตในโิด
 		for (int i = 0; i < 4; i++) {
 			ourShader.setVec3("pointLights[" + to_string(i) + "].position", pointLightPositions[i]);
-			ourShader.setVec3("pointLights[" + to_string(i) + "].ambient", 0.05f, 0.05f, 0.05f);
-			ourShader.setVec3("pointLights[" + to_string(i) + "].diffuse", 0.8f, 0.8f, 0.8f);
+			ourShader.setVec3("pointLights[" + to_string(i) + "].ambient", 0.1f, 0.2f, 0.3f);
+			ourShader.setVec3("pointLights[" + to_string(i) + "].diffuse", 0.0f, 1.0f, 0.0f);
 			ourShader.setVec3("pointLights[" + to_string(i) + "].specular", 1.0f, 1.0f, 1.0f);
 			ourShader.setFloat("pointLights[" + to_string(i) + "].constant", 1.0f);
 			ourShader.setFloat("pointLights[" + to_string(i) + "].linear", 0.09);
