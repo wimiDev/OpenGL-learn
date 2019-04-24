@@ -47,8 +47,8 @@ void Model::loadModel(string path) {
 
 void Model::processNode(aiNode *node, const aiScene *scene) {
 	for (int idx = 0; idx < node->mNumMeshes; idx++) {
-		aiMesh *mesh = scene->mMeshes[node->mMeshes[idx]];
-		this->meshes.push_back(processMesh(mesh, scene));
+		aiMesh *mesh = scene->mMeshes[node->mMeshes[idx]];//抽取其中一个网格
+		this->meshes.push_back(processMesh(mesh, scene));//把解析出来的网格压到栈里面
 	}
 	// 接下来对它的子节点重复这一过程
 	for (unsigned int i = 0; i < node->mNumChildren; i++)

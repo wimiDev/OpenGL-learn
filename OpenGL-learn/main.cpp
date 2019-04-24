@@ -84,7 +84,7 @@ int main()
 	}
 
 	//模型
-	Model myModel = Model("assets/nanosuit/nanosuit.obj");
+	Model myModel = Model("assets/resources/nanosuit/nanosuit.obj");
 
 	// build and compile our shader zprogram
 	// ------------------------------------
@@ -128,6 +128,14 @@ int main()
 		ourShader.setMat4("projection", projection);
 		ourShader.setMat4("model", model);
 
+		//计算光照
+		//光源
+		ourShader.setVec3("light.position", camera.Position);
+		ourShader.setVec3("light.ambient", 0.1f, 0.1f, 0.1f);
+		ourShader.setVec3("light.diffuse", 0.8f, 0.8f, 0.8f);
+		ourShader.setVec3("light.specular", 0.5f, 0.5f, 0.5f);
+		
+		//绘制模型
 		myModel.Draw(ourShader);
 
 		// glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
