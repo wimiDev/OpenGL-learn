@@ -15,6 +15,8 @@
 #include <glm/gtc/type_ptr.hpp>
 #include "assets/scripts/class/camera.h"
 #include "assets/scripts/class/model.h"
+#include <ft2build.h>
+#include FT_FREETYPE_H  
 
 using namespace std;
 

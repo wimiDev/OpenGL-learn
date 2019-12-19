@@ -72,7 +72,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>G:\testproject\OpenGL-learn\OpenGL-learn\opengl\include;$(IncludePath)</IncludePath>
-    <LibraryPath>G:\testproject\OpenGL-learn\OpenGL-learn\opengl\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>G:\testproject\OpenGL-learn\OpenGL-learn\opengl\lib_win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
