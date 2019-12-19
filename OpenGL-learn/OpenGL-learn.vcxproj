@@ -71,8 +71,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\opengl\Assimp\include;E:\opengl\GLFW;E:\opengl\GLAD\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\opengl\Assimp\lib;E:\opengl\GLFW\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>G:\testproject\OpenGL-learn\OpenGL-learn\opengl\Assimp\include;G:\testproject\OpenGL-learn\OpenGL-learn\opengl\GLFW;G:\testproject\OpenGL-learn\OpenGL-learn\opengl\GLAD\include;$(IncludePath)</IncludePath>
+    <LibraryPath>G:\testproject\OpenGL-learn\OpenGL-learn\opengl\Assimp\lib;G:\testproject\OpenGL-learn\OpenGL-learn\opengl\GLFW\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -152,8 +152,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="E:\opengl\GLAD\src\glad.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="opengl\GLAD\src\glad.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h" />
