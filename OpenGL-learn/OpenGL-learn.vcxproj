@@ -156,11 +156,11 @@
     <ClCompile Include="opengl\src\glad.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="mesh.h" />
-    <ClInclude Include="model.h" />
-    <ClInclude Include="shader.h" />
-    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="assets\scripts\class\camera.h" />
+    <ClInclude Include="assets\scripts\class\mesh.h" />
+    <ClInclude Include="assets\scripts\class\model.h" />
+    <ClInclude Include="assets\scripts\class\shader.h" />
+    <ClInclude Include="assets\scripts\class\stb_image.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

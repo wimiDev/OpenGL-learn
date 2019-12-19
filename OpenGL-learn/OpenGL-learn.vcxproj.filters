@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\NewFilter1">
+      <UniqueIdentifier>{f5fc2432-4bf1-4876-a31b-19435e75ae5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\assets">
+      <UniqueIdentifier>{81191748-8868-4512-99ee-fa1408b96052}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\assets\scripts">
+      <UniqueIdentifier>{18029d4e-4d1b-45ce-b6ef-d9beeca6ebca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\assets\scripts\class">
+      <UniqueIdentifier>{a930966c-2b22-46f0-b670-32baaf1ffcd2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -23,20 +35,20 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="shader.h">
-      <Filter>源文件</Filter>
+    <ClInclude Include="assets\scripts\class\camera.h">
+      <Filter>源文件\assets\scripts\class</Filter>
     </ClInclude>
-    <ClInclude Include="stb_image.h">
-      <Filter>源文件</Filter>
+    <ClInclude Include="assets\scripts\class\mesh.h">
+      <Filter>源文件\assets\scripts\class</Filter>
     </ClInclude>
-    <ClInclude Include="camera.h">
-      <Filter>源文件</Filter>
+    <ClInclude Include="assets\scripts\class\model.h">
+      <Filter>源文件\assets\scripts\class</Filter>
     </ClInclude>
-    <ClInclude Include="mesh.h">
-      <Filter>源文件</Filter>
+    <ClInclude Include="assets\scripts\class\shader.h">
+      <Filter>源文件\assets\scripts\class</Filter>
     </ClInclude>
-    <ClInclude Include="model.h">
-      <Filter>源文件</Filter>
+    <ClInclude Include="assets\scripts\class\stb_image.h">
+      <Filter>源文件\assets\scripts\class</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

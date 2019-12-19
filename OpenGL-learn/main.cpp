@@ -5,16 +5,16 @@
 #include <iostream>
 #include <cstdio>
 #include <map>
-#include "shader.h"
+#include "assets/scripts/class/shader.h"
 
 #define STB_IMAGE_IMPLEMENTATION
-//#include "stb_image.h"
+//#include "assets/scripts/class/stb_image.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include "camera.h"
-#include "model.h"
+#include "assets/scripts/class/camera.h"
+#include "assets/scripts/class/model.h"
 
 using namespace std;
 
