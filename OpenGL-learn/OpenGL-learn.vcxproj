@@ -152,6 +152,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Classes\FiEngine.cpp" />
+    <ClCompile Include="Classes\input\keyboard.cpp" />
+    <ClCompile Include="Classes\input\mouse.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="opengl\src\glad.c" />
   </ItemGroup>
@@ -161,6 +164,9 @@
     <ClInclude Include="assets\scripts\class\model.h" />
     <ClInclude Include="assets\scripts\class\shader.h" />
     <ClInclude Include="assets\scripts\class\stb_image.h" />
+    <ClInclude Include="Classes\FiEngine.h" />
+    <ClInclude Include="Classes\input\keyboard.h" />
+    <ClInclude Include="Classes\input\mouse.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

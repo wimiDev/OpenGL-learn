@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="源文件\NewFilter1">
-      <UniqueIdentifier>{f5fc2432-4bf1-4876-a31b-19435e75ae5d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\assets">
       <UniqueIdentifier>{81191748-8868-4512-99ee-fa1408b96052}</UniqueIdentifier>
     </Filter>
@@ -25,6 +22,12 @@
     <Filter Include="源文件\assets\scripts\class">
       <UniqueIdentifier>{a930966c-2b22-46f0-b670-32baaf1ffcd2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Classes">
+      <UniqueIdentifier>{e6d5b953-c36c-43aa-8c3b-0de83592791a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Classes\input">
+      <UniqueIdentifier>{ec0be7bb-4268-4097-ae8d-62b83872853b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -32,6 +35,15 @@
     </ClCompile>
     <ClCompile Include="opengl\src\glad.c">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\input\keyboard.cpp">
+      <Filter>源文件\Classes\input</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\input\mouse.cpp">
+      <Filter>源文件\Classes\input</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\FiEngine.cpp">
+      <Filter>源文件\Classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +61,15 @@
     </ClInclude>
     <ClInclude Include="assets\scripts\class\stb_image.h">
       <Filter>源文件\assets\scripts\class</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\input\keyboard.h">
+      <Filter>源文件\Classes\input</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\input\mouse.h">
+      <Filter>源文件\Classes\input</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\FiEngine.h">
+      <Filter>源文件\Classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
